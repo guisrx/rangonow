@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="/modules/login/resources/css/login.css">
+
+<div class="container" id="loginContainerID">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <div class="account-wall">
+
+                <div class="text-center">
+                    <img src="assets/img/RangoNow.png" alt="Rango Now" style="max-width:300px;"/>
+                </div>
+                <form id="rango-now-login" class="form-signin" ng-submit="signIn()">
+
+                    <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+
+                    <input name="email"
+                           type="text"
+                           class="form-control top-element"
+                           placeholder="type in your email address"
+                           ng-model="user.email"
+                           autofocus
+                           required>
+
+                    <input name="raw_password"
+                           type="password"
+                           class="form-control bottom-element"
+                           placeholder="type in your password"
+                           ng-model="user.raw_password"
+                           required>
+
+                    <br/>
+
+                    <button class="btn btn-lg btn-primary btn-block top-margin" type="submit">
+                        Sign in</button>
+
+                    <a href="#" class="pull-right need-help"><!--Problems?--></a><span class="clearfix"></span>
+                </form>
+            </div>
+
+            <button class="btn btn-lg btn-link btn-block" ng-click="go('/account')">
+                Create an account</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+node_modules
+bower_components
+.env
+Dockerfile
+docker-compose.yml
+reports
+.log
+

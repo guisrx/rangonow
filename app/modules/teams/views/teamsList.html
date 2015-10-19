@@ -1,0 +1,32 @@
+<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+
+<h3>Team list</h3>
+
+<div class="pull-right">
+    <button id="btn-teams-add" class="btn btn-primary" ng-click="go('/teams/create')" type="button">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        Create team
+    </button>
+</div>
+
+<table class="table table-striped" style="table-layout: fixed;">
+
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Lunch time</th>
+            <th>Poll close time</th>
+            <th>Time zone</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr ng-repeat="team_dto in teams track by $index">
+            <td><a ng-href="#teams/{{team_dto._id}}">{{team_dto.name}}</a></td>
+            <td>{{team_dto.lunchTime}}</td>
+            <td>{{team_dto.pollCloseTime}}</td>
+            <td>{{team_dto.timeZone}}</td>
+        </tr>
+    </tbody>
+
+</table>

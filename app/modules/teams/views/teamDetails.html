@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="col-md-6 col-md-offset-2">
+
+        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+
+        <form id="team_details" name="team_details" class="form-horizontal" ng-submit="update()">
+            <h3>Team Details</h3>
+
+            <h4>Team information</h4>
+
+             <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-10">
+                  <input type="text"
+                         class="form-control"
+                         ng-model="team.name"
+                         id="create-team-name"
+                         placeholder="Dev Heroes"
+                         pattern=".{2,30}"
+                         title="2 to 30 characters"
+                         required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputLunchTime" class="col-sm-2 control-label">Lunch time</label>
+                <div class="col-sm-10">
+                  <input type="text"
+                         class="form-control"
+                         ng-model="team.lunchTime"
+                         id="create-team-lunchTime"
+                         placeholder="13:00"
+                         pattern="([01]?[0-9]{1}|2[0-3]{1}):[0-5]{1}[0-9]{1}"
+                         title="Hour as 24h format"
+                         required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputPrinterTTL" class="col-sm-2 control-label">Poll close time</label>
+                <div class="col-sm-10">
+                  <input type="text"
+                         class="form-control"
+                         ng-model="team.pollCloseTime"
+                         id="create-team-pollCloseTime"
+                         placeholder="12:45"
+                         pattern="([01]?[0-9]{1}|2[0-3]{1}):[0-5]{1}[0-9]{1}"
+                         title="Hour as 24h format"
+                         required>
+                </div>
+            </div>
+
+             <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">Time zone</label>
+                <div class="col-sm-10">
+                  <input type="text"
+                         class="form-control"
+                         ng-model="team.timeZone"
+                         id="create-team-timeZone"
+                         placeholder="-3"
+                         pattern=".{2,30}"
+                         title="2 to 30 characters"
+                         required>
+                </div>
+            </div>
+
+            <br />
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="button" ng-click="go('/teams')" class="btn btn-default">Cancel</button>
+                  <button type="submit" class="btn btn-primary" id="update-team-btn">Update</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

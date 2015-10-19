@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>DBServer Rango Now Application - Jasmine </title>
+
+
+        <!-- Angular -->
+        <script src="../bower_components/angular/angular.min.js"></script>
+        <script src="../bower_components/angular-route/angular-route.min.js"></script>
+        <script src="../bower_components/angular-cookies/angular-cookies.min.js"></script>
+
+        <!-- SinonJs -->
+        <script src="../bower_components/sinonjs/sinon.js"></script>
+
+        <!-- Angular Mocks -->
+        <script src="../bower_components/angular-mocks/angular-mocks.js"></script>
+
+        <!-- Jasmine -->
+        <link rel="stylesheet" type="text/css" href="../bower_components/jasmine-core/lib/jasmine-core/jasmine.css">
+        <script type="text/javascript" src="../bower_components/jasmine-core/lib/jasmine-core/jasmine.js"></script>
+        <script type="text/javascript" src="../bower_components/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
+        <!-- <script type="text/javascript" src="../bower_components/jasmine-core/lib/jasmine-core.js"></script> -->
+        <script type="text/javascript" src="../bower_components/jasmine-core/lib/console/console.js"></script>
+        <script type="text/javascript" src="../bower_components/jasmine-core/lib/jasmine-core/boot.js"></script>
+
+        <!-- Config -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="icon" type="image/png"  href="../app/assets/img/RangoNow.png" />
+
+        <!-- base css -->
+        <link rel="stylesheet" href="../app/assets/css/app.css">
+
+        <!-- **** External dependencies **** -->
+
+        <!-- jQuery -->
+        <script src="../bower_components/jquery/dist/jquery.min.js"> </script>
+
+        <!--  ui-bootstrap -->
+        <script src="../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+        <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+        <!-- RestAngular -->
+        <script src="../bower_components/lodash/lodash.min.js"></script>
+        <script src="../bower_components/restangular/dist/restangular.js"> </script>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css">
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"> </script>
+
+        <!-- Angular Mocks -->
+        <script src="../bower_components/angular-mocks/angular-mocks.js"></script>
+
+        <!-- Angular Animate -->
+        <script src="../bower_components/angular-animate/angular-animate.js"></script>
+
+        <!-- Crypto JS -->
+        <script src="../bower_components/crypto-js/crypto-js.js"></script>
+        <script src="../bower_components/crypto-js/hmac-sha256.js"></script>
+
+        <!-- ng-table -->
+        <script src="../bower_components/ng-table/dist/ng-table.js"></script>
+        <link rel="stylesheet" href="../bower_components/ng-table/dist/ng-table.css">
+
+        <!-- Moment -->
+        <script src="../bower_components/moment/min/moment.min.js"></script>
+        <script src="../bower_components/angular-momentjs/angular-momentjs.js"></script>
+
+        <!-- **** Our dependencies **** -->
+
+        <!-- Config for modules -->
+        <script src="../app/configs.js" Content-Type="text/script"> </script>
+
+        <!-- Teams module -->
+        <script src="../app/modules/teams/mod_teams.js"> </script>
+        <script src="../app/modules/teams/services/teamsSvc.js"> </script>
+        <script src="../app/modules/teams/factories/teamsFct.js"> </script>
+
+        <script src="../app/modules/teams/controllers/teamsCtl.js"> </script>
+        <script src="../app/modules/teams/controllers/teamDetailsCtl.js"> </script>
+        <script src="../app/modules/teams/controllers/teamCreateCtl.js"> </script>
+
+        <!-- Restaurants module -->
+        <script src="../app/modules/restaurants/mod_restaurants.js"> </script>
+        <script src="../app/modules/restaurants/services/restaurantsSvc.js"> </script>
+        <script src="../app/modules/restaurants/factories/restaurantsFct.js"> </script>
+
+        <script src="../app/modules/restaurants/controllers/restaurantsCtl.js"> </script>
+        <script src="../app/modules/restaurants/controllers/restaurantDetailsCtl.js"> </script>
+        <script src="../app/modules/restaurants/controllers/restaurantCreateCtl.js"> </script>
+
+        <!-- Votes module -->
+        <script src="../app/modules/votes/mod_votes.js"> </script>
+        <script src="../app/modules/votes/services/votesSvc.js"> </script>
+        <script src="../app/modules/votes/factories/votesFct.js"> </script>
+        <script src="../app/modules/votes/controllers/votesCtl.js"> </script>
+
+        <!-- Utils module -->
+        <script src="../app/modules/utils/mod_utils.js"> </script>
+        <script src="../app/modules/utils/services/errorService.js"> </script>
+        <script src="../app/modules/utils/services/uuidGeneratorSvc.js"> </script>
+        <script src="../app/modules/utils/factories/apiErrorInterceptor.js"> </script>
+
+        <!-- Login module -->
+        <script src="../app/modules/login/mod_login.js"> </script>
+        <script src="../app/modules/login/controllers/loginCtl.js"> </script> 
+        <script src="../app/modules/login/services/emailService.js"> </script> 
+        <script src="../app/modules/login/services/tokenService.js"> </script> 
+        <script src="../app/modules/login/services/tokenVerifierService.js"> </script> 
+
+        <!-- **** MAIN MODULE **** -->
+        <script src="../app/app.js"> </script>
+        <script src="../app/appRoutes.js"> </script>
+        <!--<script src="appMockBackend.js"> </script>-->
+
+        <!-- Menu module -->
+        <script src="../app/modules/menu/menuCtl.js"> </script>
+
+        <!-- Specs -->
+        <script src="votesCtlSpec.js"> </script>
+
+      <script type="text/javascript">
+        (function() {
+          var jasmineEnv = jasmine.getEnv();
+          jasmineEnv.updateInterval = 1000;
+
+          var htmlReporter = new jasmine.HtmlReporter();
+
+          jasmineEnv.addReporter(htmlReporter);
+
+          jasmineEnv.specFilter = function(spec) {
+            return htmlReporter.specFilter(spec);
+          };
+
+          var currentWindowOnload = window.onload;
+
+          window.onload = function() {
+            if (currentWindowOnload) {
+              currentWindowOnload();
+            }
+            execJasmine();
+          };
+
+          function execJasmine() {
+            jasmineEnv.execute();
+          }
+
+        })();
+      </script>
+
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,85 @@
+
+<h3>Votes</h3>
+
+<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+
+            <accordion class="accordion" close-others="oneAtATime">
+                <accordion-group  ng-repeat="team in teams" is-open="false" >
+                    <accordion-heading> 
+                        {{ team.name }} 
+                        <span id="closed" class="label label-danger pull-right" ng-hide="team.available">Closed</span>
+                        <span id="open" class="label label-success pull-right" ng-hide="! team.available">Open</span>
+                        <span id="closed" class="label label-primary pull-right" ng-hide="! team.hasMostVoted">Most voted: {{ team.mostVoted }}</span>
+                    </accordion-heading>
+                    
+
+                    <table class="table table-striped" style="table-layout: fixed;">
+
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Restaurant</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr ng-repeat="user_vote in votesMap[team._id] track by $index">
+                                <td>{{user_vote.user}}</td>
+                                <td>{{user_vote.restaurant}}</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </accordion-group>
+            </accordion>
+
+        </div>
+        <div class="col-md-6">
+
+            <form id="vote_creation" name="vote_creation" class="form-horizontal" ng-submit="create()">
+
+                <h4>Vote</h4>
+
+                 <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">Team</label>
+                    <div class="col-sm-9">
+                        <select class="form-control"
+                                ng-disabled="!canVote"
+                                ng-model="vote.team"
+                                ng-options="team._id as team.name for team in availableTeams"
+                                id="create-vote-team"
+                                placeholder="team"
+                                required></select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputLunchTime" class="col-sm-2 control-label">Restaurant</label>
+                    <div class="col-sm-9">
+                        <select class="form-control"
+                                ng-disabled="!canVote"
+                                ng-model="vote.restaurant"
+                                ng-options="restaurant._id as restaurant.name for restaurant in restaurants"
+                                id="create-vote-restaurant"
+                                placeholder="restaurant"
+                                required></select>
+                    </div>
+                </div>
+
+                <br />
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button type="submit" ng-disabled="!canVote" class="btn btn-primary" id="create-vote-btn">Vote</button>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-md-6 col-md-offset-2">
+
+        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+
+        <form id="restaurant_creation" name="restaurant_creation" class="form-horizontal" ng-submit="create()">
+             <h3>Add Restaurant</h3>
+
+            <h4>Restaurant information</h4>
+
+             <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-10">
+                  <input type="text"
+                         class="form-control"
+                         ng-model="restaurant.name"
+                         id="create-restaurant-name"
+                         placeholder="Anita Restaurant"
+                         pattern=".{2,30}"
+                         title="2 to 30 characters"
+                         required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputPrice" class="col-sm-2 control-label">Price</label>
+                <div class="col-sm-10">
+                  <input type="text"
+                         class="form-control"
+                         ng-model="restaurant.price"
+                         id="create-restaurant-price"
+                         placeholder="20.50"
+                         pattern="\d+(.\d{2})?"
+                         title="Price in the format: 16.50"
+                         required>
+                </div>
+            </div>
+
+            <br />
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="button" ng-click="go('/restaurants')" class="btn btn-default">Cancel</button>
+                  <button type="submit" class="btn btn-primary" id="create-restaurant-btn">Create</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

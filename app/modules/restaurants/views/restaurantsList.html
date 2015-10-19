@@ -1,0 +1,28 @@
+<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+
+<h3>Restaurant list</h3>
+
+<div class="pull-right">
+    <button id="btn-restaurants-add" class="btn btn-primary" ng-click="go('/restaurants/create')" type="button">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        Create restaurant
+    </button>
+</div>
+
+<table class="table table-striped" style="table-layout: fixed;">
+
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr ng-repeat="restaurant_dto in restaurants track by $index">
+            <td><a ng-href="#restaurants/{{restaurant_dto._id}}">{{restaurant_dto.name}}</a></td>
+            <td>{{restaurant_dto.price}}</td>
+        </tr>
+    </tbody>
+
+</table>
