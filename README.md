@@ -5,22 +5,21 @@ The solution is available at the address http://dbserver.rangonow.com.br/.
 
 ## Problem definition ##
 
-Os times da DBserver enfrentam um grande problema. Como eles são muito democráticos, todos os dias eles gastam 30 minutos decidindo onde eles irão almoçar. Vamos fazer um pequeno sistema que auxilie essa tomada de decisão!
+The DBServer teams face a big problem. As they are very democratic, every day they spend 30 minutes deciding where they will have lunch. Let's make a small system to assist this decision making!
 
-### Estórias ###
+### Stories ###
 
-**Estória 1**
-* Eu como profissional faminto: Quero votar no meu restaurante favorito, para que eu consiga democraticamente levar meus colegas a comer onde eu gusto.
-* Critério de Aceitação: Um professional só pode votar em um restaurante por dia.
+**Story 1**
+I, like a hungry professional, will vote for my favorite restaurant, so I can take democratically my colleagues to eat where I like.
+*Acceptance criteria:* A professional can only vote in one restaurant by day.
 
-**Estória 2**
-* Eu como facilitador do processo de votação: Quero que um restaurante não possa ser repetido durante a semana para que não precise ouvir reclamações infinitas!
-* Critério de Aceitação: O mesmo restaurante não pode ser escolhido mais de uma vez durante a semana.
+**Story 2**
+I, as a facilitator of the voting process, want that a restaurant can not be repeated during the week so I don't hear endless complaints!
+*Acceptance criteria:* The same restaurant can not be chosen more than one time during the week.
 
-**Estória 3**
-* Eu como profissional faminto: Quero saber antes do meio dia qual foi o restaurante escolhido para que eu possa me despir de preconceitos e preparar o psicológico.
-* Critério de Aceitação: Mostrar de alguma forma o resultado da votação.
-
+**Story 3**
+I, like a hungry professional, want to know before noon which was the chosen restaurant so I can undress of prejudices and prepare the psychological.
+*Acceptance criteria:* Show somehow the vote results.
 
 ## Design ##
 
