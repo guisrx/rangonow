@@ -21,6 +21,7 @@ I, as a facilitator of the voting process, want that a restaurant can not be rep
 I, like a hungry professional, want to know before noon which was the chosen restaurant so I can undress of prejudices and prepare the psychological.
 *Acceptance criteria:* Show somehow the vote results.
 
+<!---
 ## Design ##
 
 * O que vale destacar no código implementado?
@@ -45,7 +46,7 @@ I, like a hungry professional, want to know before noon which was the chosen res
 * Algo a mais que você tenha a dizer
 1. Não consegui finalizar a implementação da Estória 2, mas montei a sua infra e o seu esqueleto com a entidade de banco e o node-schedule.
 2. Focando na usabilidade e na infra end-to-end do sistema acabei ficando sem tempo para finalizar as estórias e testar o sistema coerentemente.
-
+-->
 
 ## SO Dependencies ##
 
